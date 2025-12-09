@@ -1,3 +1,29 @@
+import { useState } from "react";
+import ExpenseForm from "./ExpenseForm";
+import ExpenseList from "./ExpenseList";
+import TotalDisplay from "./TotalDisplay";
+
 export default function App() {
-  return <h1 className="text-2xl font-bold underline">Hello, Vite + React!</h1>;
+  const [expenses, setExpenses] = useState([]);
+
+  function addExpense(expense) {
+    setExpenses([...expenses, expense]);
+  }
+
+  function deleteExpense(id) {
+    const updated = expenses.filter((item) => item.id !== id);
+    setExpenses(updated);
+  }
+
+  return (
+    <div className="app">
+      <h1>Simple Expense Tracker</h1>
+
+      <ExpenseForm addExpense={addExpense} />
+
+      <ExpenseList expenses={expenses} deleteExpense={deleteExpense} />
+
+      <TotalDisplay expenses={expenses} />
+    </div>
+  );
 }
