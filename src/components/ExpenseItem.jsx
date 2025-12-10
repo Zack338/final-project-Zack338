@@ -1,11 +1,12 @@
 export default function ExpenseItem({ exp, deleteExpense }) {
   return (
-    <div className="expense-item">
-      <p>
-        <strong>{exp.name}</strong> — {exp.category} — ${exp.amount}
-      </p>
-
-      <button onClick={() => deleteExpense(exp.id)}>Delete</button>
-    </div>
+    <tr>
+      <td>{exp.name}</td>
+      <td>{exp.category}</td>
+      <td>${exp.amount.toFixed(2)}</td>
+      <td>
+        <button onClick={() => deleteExpense(exp.id)}>Delete</button>
+      </td>
+    </tr>
   );
 }
