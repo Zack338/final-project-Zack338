@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>Simple Expense Tracker</h1>
+      <h1>Monthly Expense Tracker</h1>
 
       <ExpenseForm addExpense={addExpense} />
 
