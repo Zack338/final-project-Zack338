@@ -1,1 +1,64 @@
-@import "tailwindcss";
+/* Center the app and give it breathing room */
+.app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Main title */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Form styling */
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.expense-form input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.expense-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* Delete button */
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* Total display */
+h2 {
+  margin-top: 20px;
+  text-align: center;
+}
