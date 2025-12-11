@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import TotalDisplay from "./components/TotalDisplay";
 
 export default function App() {
-  const [expenses, setExpenses] = useState([]);
+  // 1. Load from localStorage on first render
+  const [expenses, setExpenses] = useState(() => {
+    const saved = localStorage.getItem("expenses");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // 2. Save to localStorage whenever expenses change
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+  }, [expenses]);
 
   function addExpense(expense) {
     setExpenses([...expenses, expense]);
